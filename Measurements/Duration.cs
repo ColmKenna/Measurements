@@ -67,6 +67,13 @@ public class Duration : IUnitOfMeasurement<Duration, (TimeUnit durationUnit, Dat
         }
     }
 
+    public Duration GetAs(TimeUnit conversionSpec)
+    {
+
+        return GetAs((conversionSpec, null));
+    }
+
+    
     public Duration GetAs((TimeUnit durationUnit, DateTime? date) conversionSpec)
     {
         Duration newDuration = (Time == conversionSpec.durationUnit) ? this : ConvertCurrent(conversionSpec);
@@ -448,6 +455,6 @@ public class Duration : IUnitOfMeasurement<Duration, (TimeUnit durationUnit, Dat
     {
         return !(left == right);
     }
-    
+
 
 }

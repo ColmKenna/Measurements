@@ -20,8 +20,7 @@ public class DurationCreationTests
         var duration2 = Duration.Days(1);
         duration1.Add(duration2);
 
-
-        Assert.Equal(25, duration1.ConvertTo(TimeUnit.Hours).Units);
+        Assert.Equal(25, duration1.GetAs(TimeUnit.Hours).Units);
     }
 
     [Fact]
